@@ -23,9 +23,6 @@ class Computer:
 
     def UpdatePrice(self, price:int):
         self.price = price
-
-    def GetPrice(self):
-        print(self.price)
     # What methods will you need?
 
 def main():
