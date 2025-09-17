@@ -7,7 +7,6 @@ Lastly there's also a function that update the price of the computer to any arbi
 """
 
 class Computer:
-
     # Define all the attributes a computer has
         #all attributes were pulled from the procedural file!
     description: str 

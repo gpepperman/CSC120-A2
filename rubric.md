@@ -47,4 +47,4 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 **Yes** 1 pt: All required files included with submission (including completed checklist file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment
+**Yes** 1 pt: `reflection.md` contains your reflection on the assignment

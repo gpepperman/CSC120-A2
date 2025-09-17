@@ -28,6 +28,8 @@ class ResaleShop:
         # Adjust the price depending on year
             if Computer.year_made < 2000:
                 Computer.price = 0
+            elif Computer.year_made < 2009:
+                Computer.price = 100
             elif Computer.year_made < 2012:
                 Computer.price = 250
             elif Computer.year_made < 2018:
