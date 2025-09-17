@@ -1,4 +1,9 @@
 from computer import Computer #import the computer class and its functions
+""""
+This class has all the attributes of what a resale shop would have (just an inventory)in this case. 
+It also includes all of the operations and functions that do behaviors inside of the Resale Shop: 
+    Buying, Selling, and Refurbishing Computers in addition to inventory checking.
+"""
 
 class ResaleShop:
 
@@ -39,6 +44,15 @@ class ResaleShop:
             for computer in self.inventory:
                 print(computer) #if the inventory has computers in it, print the computers as defined in the computer class
 
+"""
+The main section includes
+    Created Computers, I aribitraily created 3 computers with different descriptions, years, and prices
+    Created the ResaleShop with a list to be filled with computers
+    Use the already defined function to add the computers to the inventory list of MyResaleShop
+    Use the refurbish function to update the prices of the computer to match their years
+    Sell a computer
+    Lastly print the inventory with the short descriptions
+"""
    
 def main():
     

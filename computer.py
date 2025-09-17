@@ -1,10 +1,17 @@
+"""
+The computer class includes all the attributes of a computer:
+    description, processor type, hard drive capacity, memory, operating system, year made, and price.
+The class also defines an opperation that gives a shorten description of the computer:
+    description, year made, price
+Lastly there's also a function that update the price of the computer to any arbitrary value desired.
+"""
+
 class Computer:
 
     # Define all the attributes a computer has
         #all attributes were pulled from the procedural file!
     description: str 
     processor_type: str
-    hard_drive_capacity: int
     hard_drive_capacity: int
     memory: int
     operating_system: str
