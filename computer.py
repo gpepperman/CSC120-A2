@@ -20,18 +20,6 @@ class Computer:
         self.operating_system = operating_system
         self.year_made = year_made
         self.price = price
-
+    
     def UpdatePrice(self, price:int):
-        self.price = price
-    # What methods will you need?
-
-def main():
-    Computer1: Computer = Computer("Mac Pro (Late 2013)","3.5 GHc 6-Core Intel Xeon E5",1024, 64, "macOS Big Sur", 2013, 1500)
-    Computer1.UpdatePrice(1700)
-    print(Computer1.price)
-    Computer1.UpdatePrice(1300)
-    print(Computer1.price)
-
-
-if __name__ == "__main__":
-    main()
+        self.price = price    # What methods will you need?
