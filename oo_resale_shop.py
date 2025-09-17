@@ -1,43 +1,70 @@
-from computer import Computer
+from computer import Computer #import the computer class and its functions
 
 class ResaleShop:
 
-    # What attributes will it need?
-    inventory = []# type: ignore #how many computers does the store own?
+    inventory = []# type: ignore #this defines the inventory as an open list
 
     # How will you set up your constructor?
     # Remember: in python, all constructors have the same name (__init__)
-    def __init__(self, ComputerList):
-        self.inventory = ComputerList 
+    def __init__(self):
+        self.inventory = [] #this defines the inventory as an open list
 
-    def BuyComputer(self, Computer):
+    def BuyComputer(self, Computer): #this function adds a computer to the inventory list
         self.inventory.append(Computer)
     
-    def SellComputer(self, Computer):
+    def SellComputer(self, Computer): #this function adds a computer to the inventory list
         if Computer in self.inventory:  # Check if the computer exists
-            self.inventory.remove(Computer)
+            self.inventory.remove(Computer) # If the computer is in the inventory, remove it
         else:
-            print(f"Computer does not exist.")
+            print(f"Computer does not exist.") # If computer is not in inventory, say so
     
-   # def Refurbish(self, Computer):
-        #if inventory[Computer] is not None:
+    def Refurbish(self, Computer: Computer):
+        if Computer in self.inventory: #check if computer is in inventory
+        # Adjust the price depending on year
+            if Computer.year_made < 2000:
+                Computer.price = 0
+            elif Computer.year_made < 2012:
+                Computer.price = 250
+            elif Computer.year_made < 2018:
+                Computer.price = 550
+            else:
+                Computer.price = 1000
+        else:
+            print("Computer not found in inventory.") #if computer is not in inventory, say so
+
+    def PrintInventory(self):
+        if not self.inventory:
+            print("Inventory is empty.") #if the inventory is empty, say so
+        else:
+            for computer in self.inventory:
+                print(computer) #if the inventory has computers in it, print the computers as defined in the computer class
 
    
 def main():
     
+    #Define computers, with ComputerID numbers
     CID01: Computer = Computer("Mac Pro (Late 2013)","3.5 GHc 6-Core Intel Xeon E5",1024, 64, "macOS Big Sur", 2013, 1500)
-    CID02: Computer = Computer("Mac Air (Late 2018)","3.5 GHc 6-Core Intel Xeon E5",1024, 64, "macOS Big Sur", 1018, 1600)
-    CID03: Computer = Computer("Mac Pro (Late 2015)","3.5 GHc 6-Core Intel Xeon E5",1024, 64, "macOS Big Sur", 2015, 1800)
+    CID02: Computer = Computer("Mac Air (Late 2019)","3.5 GHc 6-Core Intel Xeon E5",1024, 64, "macOS Big Sur", 2019, 1600)
+    CID03: Computer = Computer("Mac Pro (Late 2023)","3.5 GHc 6-Core Intel Xeon E5",1024, 64, "macOS Big Sur", 2023, 1800)
 
-    ComputerList = [CID01, CID02, CID03]
+    #Create a resale shop
+    MyResaleShop: ResaleShop = ResaleShop()
 
-    CurrentInventory: ResaleShop = ResaleShop(10)
-    CurrentInventory.BuyComputer(CID01)
-    CurrentInventory.BuyComputer(CID02)
-    CurrentInventory.BuyComputer(CID03)
-    #CurrentInventory.SellComputer(5)
-    print(ComputerList)
-    # What methods will you need?
+    #Use the BuyComputer function to add computers to shop
+    MyResaleShop.BuyComputer(CID01)
+    MyResaleShop.BuyComputer(CID02)
+    MyResaleShop.BuyComputer(CID03)
+    
+    #Update computer price based off age
+    MyResaleShop.Refurbish(CID01)
+    MyResaleShop.Refurbish(CID02)
+    MyResaleShop.Refurbish(CID03)
+
+    #Remove a computer from inventory by selling it
+    MyResaleShop.SellComputer(CID02)
+
+    #Print the inventory list
+    MyResaleShop.PrintInventory()
 
 if __name__ == "__main__":
     main()
